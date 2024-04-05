@@ -25,49 +25,49 @@ namespace ExchangeProject
 
         private void roundButton1_Click(object sender, EventArgs e)
         {
-            MyEditForm doc = new MyEditForm();
+            FormStock1 doc = new FormStock1();
             doc.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MyEditForm form1 = new MyEditForm();
+            FStock1 form1 = new FStock1();
             form1.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MyEditForm form2 = new MyEditForm();
+            FStock1 form2 = new FStock1();
             form2.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MyEditForm form4 = new MyEditForm();
+            FStock1 form4 = new FStock1();
             form4.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MyEditForm form3 = new MyEditForm();
+            FStock1 form3 = new FStock1();
             form3.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MyEditForm form6 = new MyEditForm();
+            FStock1 form6 = new FStock1();
             form6.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            MyEditForm form5 = new MyEditForm();
+            FStock1 form5 = new FStock1();
             form5.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            MyEditForm form7 = new MyEditForm();
+            FStock1 form7 = new FStock1();
             form7.Show();
         }
     }
