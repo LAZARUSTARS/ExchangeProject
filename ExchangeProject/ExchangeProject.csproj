@@ -104,6 +104,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -118,6 +119,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-03-24_15-34-59.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\severstal.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sber2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumb_46707_participants_lid_image_big.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oak_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tatneft_Logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tatneft2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rosneft %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Логотип_Яндекса.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yandex.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sberbank_Logo_2020.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sberedit %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\71934afb-3033-41a3-8208-a53510a5736f %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x5xor9it6faocy5g4pu0k62nygnlesfy %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
