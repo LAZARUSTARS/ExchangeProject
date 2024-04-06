@@ -53,11 +53,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(565, 340);
+            this.label3.Location = new System.Drawing.Point(543, 340);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 2;
-            this.label3.Text = "EBITDA:";
+            this.label3.Text = "EV/EBITDA:";
             // 
             // label4
             // 
@@ -76,6 +76,7 @@
             this.label5.Size = new System.Drawing.Size(44, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "label5";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -89,7 +90,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(646, 56);
+            this.label8.Location = new System.Drawing.Point(640, 134);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 16);
             this.label8.TabIndex = 7;
@@ -127,6 +128,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FStock1";
             this.Text = "FStock1";
+            this.Load += new System.EventHandler(this.FStock1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
