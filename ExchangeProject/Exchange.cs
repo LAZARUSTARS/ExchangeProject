@@ -13,7 +13,7 @@ namespace ExchangeProject
         private string description;
         private string ticker;
         private string logo;
-        private int currentCap;
+        private long currentCap;
         private decimal evebitda;
         private decimal price1;
         private decimal price2;
@@ -36,7 +36,7 @@ namespace ExchangeProject
         private decimal price19;
         private decimal price20;
 
-        public Exchange(int idStock, string name, string description, string ticker, string logo, int currentCap, decimal evebitda, decimal price1, decimal price2, decimal price3, decimal price4, decimal price5, decimal price6, decimal price7, decimal price8, decimal price9, decimal price10, decimal price11, decimal price12, decimal price13, decimal price14, decimal price15, decimal price16, decimal price17, decimal price18, decimal price19, decimal price20)
+        public Exchange(int idStock, string name, string description, string ticker, string logo, long currentCap, decimal evebitda, decimal price1, decimal price2, decimal price3, decimal price4, decimal price5, decimal price6, decimal price7, decimal price8, decimal price9, decimal price10, decimal price11, decimal price12, decimal price13, decimal price14, decimal price15, decimal price16, decimal price17, decimal price18, decimal price19, decimal price20)
         {
             this.idStock = idStock;
             this.name = name;
@@ -71,7 +71,7 @@ namespace ExchangeProject
         public string Name { get { return name; } set { name = value; } }
         public string Description { get { return description; } set { description = value; } }
         public string Ticker { get { return ticker; } set { ticker = value; } }
-        public int CurrentCap { get { return currentCap; } set { currentCap = value; } }
+        public long CurrentCap { get { return currentCap; } set { currentCap = value; } }
         public decimal Evebitda { get { return evebitda; } set { evebitda = value; } }
         public decimal Price1 { get {  return price1; } set {  price1 = value; } }
         public decimal Price2 { get {  return price2; } set {  price2 = value; } }
