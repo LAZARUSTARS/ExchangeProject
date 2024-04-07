@@ -50,6 +50,8 @@ namespace ExchangeProject
             }
             connection.Close();
 
+            decimal[] args = new decimal[20] { class2[0].Price1, class2[0].Price2, class2[0].Price3, class2[0].Price4, class2[0].Price5, class2[0].Price6, class2[0].Price7, class2[0].Price8, class2[0].Price9, class2[0].Price10, class2[0].Price11, class2[0].Price12, class2[0].Price13, class2[0].Price14, class2[0].Price15, class2[0].Price16, class2[0].Price17, class2[0].Price18, class2[0].Price19, class2[0].Price20 };
+            form1.SetChart(args);
             string label1Text = class2[0].Name.ToString();
             string label5Text = class2[0].Evebitda.ToString();
             string label2Text = class2[0].Description.ToString();
@@ -76,12 +78,14 @@ namespace ExchangeProject
                 }
             }
             connection.Close();
-
+            decimal[] args = new decimal[20] { class2[1].Price1, class2[1].Price2, class2[1].Price3, class2[1].Price4, class2[1].Price5, class2[1].Price6, class2[1].Price7, class2[1].Price8, class2[1].Price9, class2[1].Price10, class2[1].Price11, class2[1].Price12, class2[1].Price13, class2[1].Price14, class2[1].Price15, class2[1].Price16, class2[1].Price17, class2[1].Price18, class2[1].Price19, class2[1].Price20 };
+            form2.SetChart(args);
             string label1Text = class2[1].Name.ToString();
             string label5Text = class2[1].Evebitda.ToString();
             string label2Text = class2[1].Description.ToString();
             string label6Text = class2[1].CurrentCap.ToString();
             form2.SetText(label1Text, label5Text, label2Text, label6Text);
+
             form2.Show();
         }
 
@@ -103,7 +107,8 @@ namespace ExchangeProject
                 }
             }
             connection.Close();
-
+            decimal[] args = new decimal[20] { class2[3].Price1, class2[3].Price2, class2[3].Price3, class2[3].Price4, class2[3].Price5, class2[3].Price6, class2[3].Price7, class2[3].Price8, class2[3].Price9, class2[3].Price10, class2[3].Price11, class2[3].Price12, class2[3].Price13, class2[3].Price14, class2[3].Price15, class2[3].Price16, class2[3].Price17, class2[3].Price18, class2[3].Price19, class2[3].Price20 };
+            form4.SetChart(args);
             string label1Text = class2[3].Name.ToString();
             string label5Text = class2[3].Evebitda.ToString();
             string label2Text = class2[3].Description.ToString();
@@ -131,7 +136,8 @@ namespace ExchangeProject
                 }
             }
             connection.Close();
-
+            decimal[] args = new decimal[20] { class2[2].Price1, class2[2].Price2, class2[2].Price3, class2[2].Price4, class2[2].Price5, class2[2].Price6, class2[2].Price7, class2[2].Price8, class2[2].Price9, class2[2].Price10, class2[2].Price11, class2[2].Price12, class2[2].Price13, class2[2].Price14, class2[2].Price15, class2[2].Price16, class2[2].Price17, class2[2].Price18, class2[2].Price19, class2[2].Price20 };
+            form3.SetChart(args);
             string label1Text = class2[2].Name.ToString();
             string label5Text = class2[2].Evebitda.ToString();
             string label2Text = class2[2].Description.ToString();
@@ -159,7 +165,8 @@ namespace ExchangeProject
                 }
             }
             connection.Close();
-
+            decimal[] args = new decimal[20] { class2[5].Price1, class2[5].Price2, class2[5].Price3, class2[5].Price4, class2[5].Price5, class2[5].Price6, class2[5].Price7, class2[5].Price8, class2[5].Price9, class2[5].Price10, class2[5].Price11, class2[5].Price12, class2[5].Price13, class2[5].Price14, class2[5].Price15, class2[5].Price16, class2[5].Price17, class2[5].Price18, class2[5].Price19, class2[5].Price20 };
+            form6.SetChart(args);
             string label1Text = class2[5].Name.ToString();
             string label5Text = class2[5].Evebitda.ToString();
             string label2Text = class2[5].Description.ToString();
@@ -187,7 +194,8 @@ namespace ExchangeProject
                 }
             }
             connection.Close();
-
+            decimal[] args = new decimal[20] { class2[4].Price1, class2[4].Price2, class2[4].Price3, class2[4].Price4, class2[4].Price5, class2[4].Price6, class2[4].Price7, class2[4].Price8, class2[4].Price9, class2[4].Price10, class2[4].Price11, class2[4].Price12, class2[4].Price13, class2[4].Price14, class2[4].Price15, class2[4].Price16, class2[4].Price17, class2[4].Price18, class2[4].Price19, class2[4].Price20 };
+            form5.SetChart(args);
             string label1Text = class2[4].Name.ToString();
             string label5Text = class2[4].Evebitda.ToString();
             string label2Text = class2[4].Description.ToString();
@@ -215,7 +223,8 @@ namespace ExchangeProject
                 }
             }
             connection.Close();
-
+            decimal[] args = new decimal[20] { class2[6].Price1, class2[6].Price2, class2[6].Price3, class2[6].Price4, class2[6].Price5, class2[6].Price6, class2[6].Price7, class2[6].Price8, class2[6].Price9, class2[6].Price10, class2[6].Price11, class2[6].Price12, class2[6].Price13, class2[6].Price14, class2[6].Price15, class2[6].Price16, class2[6].Price17, class2[6].Price18, class2[6].Price19, class2[6].Price20 };
+            form7.SetChart(args);
             string label1Text = class2[6].Name.ToString();
             string label5Text = class2[6].Evebitda.ToString();
             string label2Text = class2[6].Description.ToString();

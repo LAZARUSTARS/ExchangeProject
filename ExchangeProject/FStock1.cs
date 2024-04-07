@@ -51,5 +51,24 @@ namespace ExchangeProject
                 label6.Text = s.ToString() + " МЛРД ₽";
             }
         }
+
+        public void SetChart(decimal[] arguments)
+        {
+            DateTime startTime = DateTime.Today;
+            int minn = Convert.ToInt32(arguments.Min());
+            this.chart1.Series["Series1"].BorderWidth = 3;
+            this.chart1.ChartAreas[0].AxisY.Minimum = minn;
+
+            //int minn = Convert.ToInt32(arguments.Min());
+
+            //this.chart1.Series["Series1"] = minn;
+
+            for (int i = 0; i < 20;  i++)
+            {
+                DateTime current = startTime.AddDays(i);
+                this.chart1.Series["Series1"].Points.AddXY(current.ToShortDateString(), arguments[i]);
+
+            }
+        }
     }
 }
