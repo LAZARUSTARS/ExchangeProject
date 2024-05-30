@@ -29,11 +29,12 @@ namespace ExchangeProject
             
         }
 
-        public void SetText(string label1text, string label5text, string label2text, string label6text)
+        public void SetText(string label1text, string tickerText, string label5text, string label2text, string label6text)
         {
             label1.Text = label1text;
             label5.Text = label5text;
             label2.Text = label2text;
+            label7.Text = tickerText;
 
             long q = long.Parse(label6text);
             if (q > 1_000_000_000_000)
@@ -48,7 +49,7 @@ namespace ExchangeProject
             }
         }
 
-        public void SetChart(decimal[] arguments, string start, string end, string type)
+        public void SetChart(decimal[] arguments, string start, string end, string type, string[] time)
         {
             chart1.Series["Cost"].Points.Clear();
             int minn = Convert.ToInt32(arguments.Min());
@@ -57,13 +58,14 @@ namespace ExchangeProject
             this.chart1.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
             if (type == "hourly")
             {
-                DateTime current = DateTime.Now;
+            
                 for (int h = 0; h < arguments.Length; h++)
                 {
-                    
-                    this.chart1.Series["Cost"].Points.AddXY(current.ToLongDateString(), arguments[h]);
-                    current = current.AddHours(-1);
+                    DateTime dateTime = DateTime.Parse(time[h]);
+                    string dateTime1 = dateTime.ToString("HH:mm");
+                    this.chart1.Series["Cost"].Points.AddXY(dateTime1, arguments[h]);
                 }
+
             }
             if (type == "daily")
             {
@@ -95,23 +97,26 @@ namespace ExchangeProject
                 string endTime = DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd");
                 using (var client = new HttpClient())
                 {
-                    string url = "https://iss.moex.com/iss/engines/stock/markets/shares/securities/CHMF/candles.json?from=" + endTime + "&till=" + startTime + "&interval=60";
+                    string url = "https://iss.moex.com/iss/engines/stock/markets/shares/securities/" + label7.Text + "/candles.json?from=" + endTime + "&till=" + startTime + "&interval=60";
                     var endPoint = new Uri(url);
                     var result = client.GetAsync(endPoint).Result;
                     var json = result.Content.ReadAsStringAsync().Result;
                     var data = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json);
                     var dataArray = data["candles"].GetProperty("data");
                     decimal[] priceData = new decimal[dataArray.GetArrayLength()];
+                    string[] timeArray = new string[dataArray.GetArrayLength()];
                     int k = 0;
                     int q = dataArray.GetArrayLength();
                     foreach (var item in dataArray.EnumerateArray())
                     {
                         decimal price = item[0].GetDecimal();
                         priceData[k] = price;
+                        string time = item[item.GetArrayLength() - 1].GetString();
+                        timeArray[k] = time;
                         k++;
                     }
 
-                    SetChart(priceData, startTime, endTime, "hourly");
+                    SetChart(priceData, startTime, endTime, "hourly", timeArray);
                 }
             }
             if (comboBox1.SelectedIndex == 1)
@@ -121,13 +126,14 @@ namespace ExchangeProject
                 string endTime2 = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd"); ;
                 using (var client = new HttpClient())
                 {
-                    string url = "https://iss.moex.com/iss/engines/stock/markets/shares/securities/CHMF/candles.json?from=" + endTime2 + "&till=" + startTime2 + "&interval=24";
+                    string url = "https://iss.moex.com/iss/engines/stock/markets/shares/securities/" + label7.Text + "/candles.json?from=" + endTime2 + "&till=" + startTime2 + "&interval=24";
                     var endPoint = new Uri(url);
                     var result = client.GetAsync(endPoint).Result;
                     var json = result.Content.ReadAsStringAsync().Result;
                     var data = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json);
                     var dataArray = data["candles"].GetProperty("data");
                     decimal[] priceData = new decimal[dataArray.GetArrayLength()];
+                    string[] timeArray = new string[dataArray.GetArrayLength()];
                     int k = 0;
                     int q = dataArray.GetArrayLength();
                     foreach (var item in dataArray.EnumerateArray())
@@ -137,7 +143,7 @@ namespace ExchangeProject
                         k++;
                     }
 
-                    SetChart(priceData, startTime2, endTime2, "daily");
+                    SetChart(priceData, startTime2, endTime2, "daily", timeArray);
                 }
             }
             if (comboBox1.SelectedIndex == 2)
@@ -147,13 +153,14 @@ namespace ExchangeProject
                 string endTime3 = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd"); ;
                 using (var client = new HttpClient())
                 {
-                    string url = "https://iss.moex.com/iss/engines/stock/markets/shares/securities/CHMF/candles.json?from=" + endTime3 + "&till=" + startTime3 + "&interval=24";
+                    string url = "https://iss.moex.com/iss/engines/stock/markets/shares/securities/" + label7.Text + "/candles.json?from=" + endTime3 + "&till=" + startTime3 + "&interval=24";
                     var endPoint = new Uri(url);
                     var result = client.GetAsync(endPoint).Result;
                     var json = result.Content.ReadAsStringAsync().Result;
                     var data = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json);
                     var dataArray = data["candles"].GetProperty("data");
                     decimal[] priceData = new decimal[dataArray.GetArrayLength()];
+                    string[] timeArray = new string[dataArray.GetArrayLength()];
                     int k = 0;
                     int q = dataArray.GetArrayLength();
                     foreach (var item in dataArray.EnumerateArray())
@@ -163,7 +170,7 @@ namespace ExchangeProject
                         k++;
                     }
 
-                    SetChart(priceData, startTime3, endTime3, "daily");
+                    SetChart(priceData, startTime3, endTime3, "daily", timeArray);
                 }
             }
         }
